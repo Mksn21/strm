@@ -13,7 +13,7 @@ html_string = '''
 
     // Prompt user to select any serial port.
     const port = await navigator.serial.requestPort();
-
+   port.open({ baudRate: 9600 });
     // Wait for the serial port to open.
   });
 
