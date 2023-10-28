@@ -53,5 +53,5 @@ co = serial_ports()
 if st.sidebar.button("add"):
   components.html(html_string)
   st.write(co)
-if st.sidebar.button("as"): 
+if st.button("as"): 
     st.write(co)
