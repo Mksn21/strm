@@ -1,6 +1,9 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import serial
+import sys
+import glob
+
 
 html_string = '''
 <button>Request Serial Port</button>
