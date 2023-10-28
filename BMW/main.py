@@ -19,8 +19,7 @@ html_string = '''
 
 </script>
 '''
-if st.sidebar.button("add"):
-  components.html(html_string)
+
     
 def serial_ports():
     """ Lists serial port names
@@ -51,6 +50,8 @@ def serial_ports():
     return result
 
 co = serial_ports()
-
+if st.sidebar.button("add"):
+  components.html(html_string)
+  st.write(co)
 if st.sidebar.button("as"): 
     st.write(co)
