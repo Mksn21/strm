@@ -15,25 +15,8 @@ html_string = '''
     const port = await navigator.serial.requestPort();
 
     // Wait for the serial port to open.
-    await port.open({ baudRate: 9600 });
   });
-  while (port.readable) {
-  const reader = port.readable.getReader();
-  try {
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) {
-        // |reader| has been canceled.
-        break;
-      }
-      // Do something with |value|...
-    }
-  } catch (error) {
-    // Handle |error|...
-  } finally {
-    reader.releaseLock();
-  }
-}
+
 </script>
 '''
 if st.sidebar.button("add"):
