@@ -26,7 +26,7 @@ const reader = port.readable.getReader();
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const { value, done } = reader.read();
   if (done) {
     // Allow the serial port to be closed later.
     reader.releaseLock();
