@@ -19,6 +19,24 @@ html_string = '''
 
 </script>
 '''
+html_string1 = '''
+<button>Serial Port</button>
+<script>
+const reader = port.readable.getReader();
+
+// Listen to data coming from the serial device.
+while (true) {
+  const { value, done } = await reader.read();
+  if (done) {
+    // Allow the serial port to be closed later.
+    reader.releaseLock();
+    break;
+  }
+  // value is a Uint8Array.
+  console.log(value);
+}
+</script>
+'''
 
     
 def serial_ports():
@@ -52,6 +70,7 @@ def serial_ports():
 co = serial_ports()
 if st.sidebar.button("add"):
   components.html(html_string)
+  components.html(html_string1)
   st.write(co)
 if st.button("as"): 
     st.write(co)
